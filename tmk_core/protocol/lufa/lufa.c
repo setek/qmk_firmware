@@ -473,9 +473,11 @@ void EVENT_USB_Device_ControlRequest(void) {
 
                             if (report_id == REPORT_ID_KEYBOARD || report_id == REPORT_ID_NKRO) {
                                 keyboard_led_stats = Endpoint_Read_8();
+                                dprintf("if report_id: %u", keyboard_led_stats);
                             }
                         } else {
                             keyboard_led_stats = Endpoint_Read_8();
+                            dprintf("else Endpoint_BytesInEndpoint() == 2: %u", keyboard_led_stats);
                         }
 
                         Endpoint_ClearOUT();
