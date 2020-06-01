@@ -22,5 +22,32 @@
     "[markdown]": {
         "editor.trimAutoWhitespace": false,
         "files.trimTrailingWhitespace": false
-    }
+    },
+    "cSpell.words": [
+        "ARSTNEIO",
+        "BSLS",
+        "BSPC",
+        "COLEMAK",
+        "COLMK",
+        "EXLM",
+        "LALT",
+        "LCTL",
+        "LPRN",
+        "LSFT",
+        "LUFA",
+        "MPLY",
+        "OSSL",
+        "PERC",
+        "QWERT",
+        "RGHT",
+        "RPRN",
+        "RSFT",
+        "SCLN",
+        "SLSH",
+        "TILD",
+        "TRNSPRNT",
+        "abbrs",
+        "lgui",
+        "noeeprom"
+    ]
 }
