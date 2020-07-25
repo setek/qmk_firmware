@@ -12,6 +12,8 @@
 
 ## When QMK gets updated
 
+Follow the instructions for setting a remote upstream: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork
+
 You’ll want to grab all the changes from QMK but not dirty your fork with merge commits.
 
  1. `git checkout master`

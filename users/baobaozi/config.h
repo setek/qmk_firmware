@@ -27,13 +27,16 @@
 // I don’t like retro tapping because when you’re selecting multiple items with command in a mod-tap, when you let go,
 // it will send the tap character, and deselect your stuff.
 // #define RETRO_TAPPING
+#ifdef RETRO_TAPPING
+#    undef RETRO_TAPPING
+#endif
 
 // How long to hold an LT before it does the "held" rather than "tap" key
 #ifdef TAPPING_TERM
 #    undef TAPPING_TERM
-#endif  // TAPPING_TERM
+#endif
 #define TAPPING_TERM 200
-// Allow custom tapping term for just a few keys
+// Allow custom tapping term for just a few keys (if you reduce tapping term on mods, it’s nice imo, unless you have mod-taps)
 #define TAPPING_TERM_PER_KEY
 
 // If you're a fast typist and type an LT and then another key really quickly, instead of considering it a mod + second,
@@ -45,12 +48,17 @@
 
 // if you do mod-tap plus key all within tapping term, consider it a mod
 // #define PERMISSIVE_HOLD
+// or, don’t do it
 #ifdef PERMISSIVE_HOLD
 #    undef PERMISSIVE_HOLD
 #endif
 
 #ifdef RGBLIGHT_ENABLE
 #    define RGBLIGHT_LAYERS
-// #    define RGBLIGHT_EFFECT_BREATHING
+#    define RGBLIGHT_EFFECT_BREATHING
 // #    define BACKLIGHT_CAPS_LOCK
 #endif
+
+/* Add combos */
+#define COMBO_COUNT 3
+#define COMBO_TERM 35

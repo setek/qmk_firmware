@@ -14,7 +14,7 @@ enum userspace_layers {
     QUA
 };
 
-// bool try_handle_macro(uint16_t keycode, keyrecord_t *record) { // somewhere I saw do this, but don’t, it doesn’t work
+// bool try_handle_macro(uint16_t keycode, keyrecord_t *record) { // Use this to define macros in addition to the user macros. As in, the crkbd has extra macros defined over there.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MCSG3:
@@ -45,3 +45,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     return true;
 };
+
+uint16_t get_tapping_term(keyevent_t* event) {
+    uint16_t keycode = keymap_key_to_keycode(layer_switch_get_layer(event->key), event->key);
+    // I don’t have any mod-taps, so it’s safe to do this. Rethink this if you decide to do mod-taps
+    if (keycode == KC_LALT || keycode == KC_LGUI || keycode == KC_LCTL || keycode == KC_RGUI || keycode == KC_RALT || keycode == KC_RCTL || keycode == AAG(NO)) {
+        return TAPPING_TERM - 50;
+    }
+
+    if (keycode == LT1(Q) || keycode == LT2(W) || keycode == LT3(X) || keycode == LT4(CAPS) || keycode == MG(SPC)) {
+        return TAPPING_TERM + 15;
+    }
+
+    return TAPPING_TERM;
+}

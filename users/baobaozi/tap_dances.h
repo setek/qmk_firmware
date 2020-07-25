@@ -20,7 +20,6 @@ enum tap_dance_declarations {
     CPST = 0, // Our custom tap dance key; add any other tap dance keys to this enum
     XPST,
     CORX,
-    QTAB,
     LYRS,
     F212,
     SQUO,

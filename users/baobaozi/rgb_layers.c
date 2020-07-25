@@ -10,16 +10,16 @@ const rgblight_segment_t PROGMEM sec_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, RGBLED_NUM, HSV_MAGENTA}
 );
 const rgblight_segment_t PROGMEM ter_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, RGBLED_NUM, HSV_PINK}
+    {0, RGBLED_NUM, HSV_WHITE}
 );
 const rgblight_segment_t PROGMEM qua_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, RGBLED_NUM, HSV_WHITE}
+    {0, RGBLED_NUM, 95, 255, 255} // between green and springgreen
 );
 // as later layers take precedence, we want capslock layer to override
 // but for some reason, capslock colour layer doesn’t work anyway. shrug.
 const rgblight_segment_t PROGMEM capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 2, HSV_RED},
-    {9, 2, HSV_RED}
+    {5, 2, HSV_RED},
+    {7, 2, HSV_RED}
 );
 
 // Now define the array of layers. Later layers take precedence
@@ -41,6 +41,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(2, layer_state_cmp(state, _SEC));
     rgblight_set_layer_state(3, layer_state_cmp(state, _TER));
     rgblight_set_layer_state(4, layer_state_cmp(state, _QUA));
+
+    // wish this worked …
+    if (layer_state_cmp(state, _QWERTY) == 1) {
+        dprintf("HIHIHI in layer_state_is(0): %u\n", layer_state_cmp(state, _QWERTY) == 1);
+        rgblight_mode(RGBLIGHT_MODE_BREATHING);
+    } else {
+        rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+    }
 
     // if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
     //     rgblight_sethsv_range(HSV_RED, 0, RGBLED_NUM);

@@ -20,6 +20,12 @@
 #    include "tap_dances.h"
 #endif  // TAP_DANCE_ENABLE
 
+// #ifdef TAP_DANCE_ENABLE
+// #    define KC_SAFE_RESET TD(TD_SAFE_RESET)
+// #else  // TAP_DANCE_ENABLE
+// #    define KC_SAFE_RESET RESET
+// #endif  // TAP_DANCE_ENABLE
+
 // Init macro keycodes, define what they do in <name>.c
 enum custom_keys {
     MCSG3 = SAFE_RANGE,

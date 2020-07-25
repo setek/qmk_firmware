@@ -84,7 +84,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [CPST] = ACTION_TAP_DANCE_DOUBLE(G(KC_C), G(KC_V)), // Tap once for Copy, twice for Paste
     [XPST] = ACTION_TAP_DANCE_DOUBLE(G(KC_X), G(KC_V)), // Tap once for Cut, twice for Paste
     [CORX] = ACTION_TAP_DANCE_DOUBLE(G(KC_C), G(KC_X)), // Tap once for Copy, twice for Cut
-    [QTAB] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_TAB),
     [F212] = ACTION_TAP_DANCE_DOUBLE(G(KC_F2), KC_F12), // Tap once for Cmd + F2, twice for F12
     [SQUO] = ACTION_TAP_DANCE_DOUBLE(A(KC_RBRC), A(S(KC_RBRC))), // Tap once for single opening quote, twice for single closing quote
     [DQUO] = ACTION_TAP_DANCE_DOUBLE(A(KC_LBRC), A(S(KC_LBRC))), // Tap once for double opening quote, twice for double closing quote
