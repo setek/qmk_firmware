@@ -43,7 +43,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(4, layer_state_cmp(state, _QUA));
 
     // wish this worked …
-    if (layer_state_cmp(state, _QWERTY) == 1) {
+    if (layer_state_cmp(state, _QWERTY)) {
         dprintf("HIHIHI in layer_state_is(0): %u\n", layer_state_cmp(state, _QWERTY) == 1);
         rgblight_mode(RGBLIGHT_MODE_BREATHING);
     } else {
