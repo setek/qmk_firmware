@@ -11,10 +11,11 @@
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 #define _QWERTY 0
-#define _PRI 1
-#define _SEC 2
-#define _TER 3
-#define _QUA 4
+#define _COLEMAK 1
+#define _PRI 2
+#define _SEC 3
+#define _TER 4
+#define _QUA 5
 
 #ifdef TAP_DANCE_ENABLE
 #    include "tap_dances.h"
@@ -30,5 +31,7 @@
 enum custom_keys {
     MCSG3 = SAFE_RANGE,
     MCSG4,
-    MGF2
+    MGF2,
+    GOQWER,
+    GOCLMK
 };

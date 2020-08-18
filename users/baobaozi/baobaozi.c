@@ -8,6 +8,7 @@ enum userspace_layers {
     KC_MAKE = SAFE_RANGE,
     NEW_SAFE_RANGE,  // use "NEW_SAFE_RANGE" for keymap specific codes
     QWERTY,
+    COLEMAK,
     PRI,
     SEC,
     TER,
@@ -41,6 +42,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16(G(KC_F2));
             }
             break;
+        case GOQWER:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QWERTY);
+            }
+            return false;
+        case GOCLMK:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_COLEMAK);
+            }
+            return false;
     }
 
     return true;
@@ -49,7 +60,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_tapping_term(keyevent_t* event) {
     uint16_t keycode = keymap_key_to_keycode(layer_switch_get_layer(event->key), event->key);
     // I don’t have any mod-taps, so it’s safe to do this. Rethink this if you decide to do mod-taps
-    if (keycode == KC_LALT || keycode == KC_LGUI || keycode == KC_LCTL || keycode == KC_RGUI || keycode == KC_RALT || keycode == KC_RCTL || keycode == AAG(NO)) {
+    if (keycode == keycode == KC_LCTL || KC_LALT || keycode == KC_LGUI || keycode == KC_RGUI || keycode == KC_RALT || keycode == KC_RCTL || keycode == AAG(NO)) {
         return TAPPING_TERM - 50;
     }
 

@@ -2,6 +2,8 @@
 
 // Shortcuts to make keymap more readable
 // Layer change abbrs
+#define TGQ TG(_QWERTY)
+#define TGC TG(_COLEMAK)
 #define LM1 MO(_PRI)
 #define LM2 MO(_SEC)
 #define LM3 MO(_TER)
