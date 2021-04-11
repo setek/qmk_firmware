@@ -150,6 +150,9 @@ static void render_status(void) {
         case _CUR:
             oled_write_P(PSTR("CURSOR      > mouse\n"), false);
             break;
+        case _QWERTY:
+            oled_write_P(PSTR("QWERTY      > sucks\n"), false);
+            break;
         default:
             oled_write_P(PSTR("COLEMAK    > typing\n"), false);
     }

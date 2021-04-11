@@ -55,7 +55,16 @@
 
 #ifdef RGBLIGHT_ENABLE
 #    define RGBLIGHT_LAYERS
-#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#    undef RGBLIGHT_EFFECT_TWINKLE // single colour pulse in and out, 1/10
+#    undef RGBLIGHT_EFFECT_RAINBOW_MOOD // all same colour, slowwww fade to other colours, 3/10
+#    undef RGBLIGHT_EFFECT_SNAKE // single colour rolling wave, 2/10
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL // different colours, fade to other colours, 10/10
+#    undef RGBLIGHT_EFFECT_BREATHING // slowly pulses in a breathing fashion, 3/10
+#    undef RGBLIGHT_EFFECT_KNIGHT // one colour that flashes back and forth, 0/10
+#    undef RGBLIGHT_EFFECT_CHRISTMAS // alternating red and green, 0/10
+#    undef RGBLIGHT_EFFECT_STATIC_GRADIENT // whole rainbow but doesn’t actually animate, 1/10
+#    undef RGBLIGHT_EFFECT_RGB_TEST // harsh flash between different colours, 0/10
+#    undef RGBLIGHT_EFFECT_ALTERNATING // single colour flashing in and out, 0/10
 #    define RGBLIGHT_SLEEP
 // #    define BACKLIGHT_CAPS_LOCK
 #endif
@@ -77,6 +86,7 @@
 #define COMBO_VARIABLE_LEN
 #define COMBO_TERM 35
 #define COMBO_TERM_PER_COMBO
+#define EXTRA_SHORT_COMBOS
 // #define COMBO_ONLY_FROM_LAYER 0
 
 // #define ARSTNEIO_ENABLE

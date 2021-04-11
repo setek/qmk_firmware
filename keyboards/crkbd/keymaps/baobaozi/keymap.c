@@ -261,7 +261,7 @@ void render_mod_status_ctrl_shift(uint8_t modifiers) {
 void render_mod_status_capslock(void) {
     led_t led_state = host_keyboard_led_state();
 
-    oled_write_P(led_state.caps_lock ? PSTR(" CAP\n") : PSTR("\n"), false);
+    oled_write_P(led_state.caps_lock ? PSTR(">CAP<\n") : PSTR(" cap\n\n"), false);
 }
 
 void render_logo(void) {
@@ -289,6 +289,9 @@ void render_layer_state(void) {
     } else if(layer_state_is(_NAV)) {
         oled_write_P(PSTR(" NAV\n"), false);
         oled_write_P(PSTR(" mov\n"), false);
+    } else if(layer_state_is(_QWERTY)) {
+        oled_write_P(PSTR(" QWE\n"), false);
+        oled_write_P(PSTR(" sux\n"), false);
     } else {
         oled_write_P(PSTR(" CMK\n"), false);
         oled_write_P(PSTR(" yay\n"), false);
@@ -356,9 +359,10 @@ void render_status_secondary(void) {
     render_space();
     render_layer_state();
     render_space();
+    render_space();
+    render_space();
     render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
     render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
-    render_mod_status_capslock();
 }
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
