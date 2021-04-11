@@ -85,8 +85,13 @@ const uint16_t PROGMEM ent_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {MS(SLSH), KC_M, COMBO_END};
 const uint16_t PROGMEM tgnav_combo[] = {KC_SCLN, KC_O, MS(SLSH), COMBO_END}; // for when I watch TV
 const uint16_t PROGMEM apo_combo[] = {KC_P, KC_T, COMBO_END}; // vertical combo works well on DSA, but it a bit troublesome on OEM
+#ifdef BILATERAL_COMBINATIONS
+const uint16_t PROGMEM oss_combo[] = {MS(N), MG(E), MA(I), COMBO_END}; // one shot shift in same spot both hands, so depending on which letter next you need to shift
+const uint16_t PROGMEM ossl_combo[] = {MA(R), MG(S), MS(T), COMBO_END}; // left hand mirror here
+#else
 const uint16_t PROGMEM oss_combo[] = {KC_N, KC_E, KC_I, COMBO_END}; // one shot shift in same spot both hands, so depending on which letter next you need to shift
 const uint16_t PROGMEM ossl_combo[] = {KC_R, KC_S, KC_T, COMBO_END}; // left hand mirror here
+#endif
 const uint16_t PROGMEM bspc_combo[] = {KC_L, KC_U, KC_Y, COMBO_END}; // trial backspace in combo
 const uint16_t PROGMEM bspcpri_combo[] = {AA(LEFT), KC_PGUP, KC_PGDN, COMBO_END}; // trial backspace in combo in primary layer
 const uint16_t PROGMEM bspcsec_combo[] = {KC_RBRC, KC_RPRN, KC_PPLS, COMBO_END}; // trial backspace in combo in secondary layer

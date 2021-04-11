@@ -89,6 +89,9 @@
 #define EXTRA_SHORT_COMBOS
 // #define COMBO_ONLY_FROM_LAYER 0
 
+// i still don't really like home row mods lol
+// #define BILATERAL_COMBINATIONS 180
+
 // #define ARSTNEIO_ENABLE
 
 // One shot settings

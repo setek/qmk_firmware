@@ -72,17 +72,21 @@
 // Colemak
 // LEFT                                                  ┌─── Q ───┬─── W ───┬─── F ───┬─── P ───┬─── G ───┐
 #define _________________ROW_TOP_COLMK_L_________________ LTN(Q)   ,LTS(W)   ,KC_F     ,KC_P     ,KC_G
+#ifdef BILATERAL_COMBINATIONS
+#define _________________ROW_MID_COLMK_L_________________ MC(A)    ,MA(R)    ,MG(S)    ,MS(T)    ,KC_D
+#else
 #define _________________ROW_MID_COLMK_L_________________ KC_A     ,KC_R     ,KC_S     ,KC_T     ,KC_D
+#endif
 #define _________________ROW_BOT_COLMK_L_________________ MS(Z)    ,LT0(X)   ,KC_C     ,KC_V     ,KC_B
 //                                                       └─────────┴─────────┴─────────┴─────────┴─────────┘
 
-// I don’t like homerow mods
-// #define _________________ROW_MID_COLMK_L_________________ MC(A)    ,MA(R)    ,MG(S)    ,MS(T)    ,KC_D
-// #define _________________ROW_MID_COLMK_R_________________ KC_H     ,MS(N)    ,MG(E)    ,MA(I)    ,MC(O)
-
 // RIGHT                                                 ┌─── J ───┬─── L ───┬─── U ───┬─── Y ───┬─── ; ───┐
 #define _________________ROW_TOP_COLMK_R_________________ KC_J     ,KC_L     ,KC_U     ,KC_Y     ,KC_SCLN
+#ifdef BILATERAL_COMBINATIONS
+#define _________________ROW_MID_COLMK_R_________________ KC_H     ,MS(N)    ,MG(E)    ,MA(I)    ,MC(O)
+#else
 #define _________________ROW_MID_COLMK_R_________________ KC_H     ,KC_N     ,KC_E     ,KC_I     ,KC_O
+#endif
 #define _________________ROW_BOT_COLMK_R_________________ KC_K     ,KC_M     ,KC_COMM  ,KC_DOT   ,MS(SLSH)
 //                                                       └─────────┴─────────┴─────────┴─────────┴─────────┘
 // QWERTY (is pretty shit and i forgot how to use it so i will probably delete it later)
